@@ -1,0 +1,63 @@
+<!-- Improved Navbar with accessibility, responsive menu, and active link highlighting -->
+<nav
+  class="bg-blue-600 text-white px-4 py-3 shadow-md"
+  role="navigation"
+  aria-label="Main navigation"
+>
+  <div class="container mx-auto flex flex-wrap items-center justify-between">
+    <a
+      routerLink="/home"
+      class="text-xl font-semibold hover:text-yellow-300 transition focus:outline-none focus:ring-2 focus:ring-yellow-300"
+      aria-label="WeatherApp Home"
+      >WeatherApp</a
+    >
+    <!-- Hamburger menu for mobile -->
+    <button
+      class="sm:hidden flex items-center px-3 py-2 border rounded text-white border-white hover:text-yellow-300 hover:border-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-300"
+      type="button"
+      aria-label="Toggle navigation"
+      (click)="isMenuOpen = !isMenuOpen"
+    >
+      <svg class="fill-current h-5 w-5" viewBox="0 0 20 20">
+        <title>Menu</title>
+        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+      </svg>
+    </button>
+    <div
+      class="w-full sm:w-auto sm:flex space-y-2 sm:space-y-0 space-x-0 sm:space-x-4 mt-2 sm:mt-0"
+      [ngClass]="{ block: isMenuOpen, hidden: !isMenuOpen, 'sm:flex': true }"
+    >
+      <a
+        routerLink="/home"
+        routerLinkActive="text-yellow-300 font-bold underline"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="block sm:inline hover:text-yellow-300 transition px-2 py-1 rounded focus:outline-none focus:ring-2 focus:ring-yellow-300"
+        >Home</a
+      >
+      <a
+        routerLink="/home/forecast/Cairo"
+        routerLinkActive="text-yellow-300 font-bold underline"
+        class="block sm:inline hover:text-yellow-300 transition px-2 py-1 rounded focus:outline-none focus:ring-2 focus:ring-yellow-300"
+        >Forecast</a
+      >
+      <a
+        routerLink="/home/search"
+        routerLinkActive="text-yellow-300 font-bold underline"
+        class="block sm:inline hover:text-yellow-300 transition px-2 py-1 rounded focus:outline-none focus:ring-2 focus:ring-yellow-300"
+        >Search</a
+      >
+      <a
+        routerLink="/astronomy/Cairo"
+        routerLinkActive="text-yellow-300 font-bold underline"
+        class="block sm:inline hover:text-yellow-300 transition px-2 py-1 rounded focus:outline-none focus:ring-2 focus:ring-yellow-300"
+        >Astronomy</a
+      >
+      <a
+        routerLink="/air-quality/Cairo"
+        routerLinkActive="text-yellow-300 font-bold underline"
+        class="block sm:inline hover:text-yellow-300 transition px-2 py-1 rounded focus:outline-none focus:ring-2 focus:ring-yellow-300"
+        >Air Quality</a
+      >
+    </div>
+  </div>
+</nav>
